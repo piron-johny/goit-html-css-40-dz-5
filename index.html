@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Go IT. Д\З №4</title>
   </head>
-  <body>
+  <body data-modal-no-scroll>
     <!-- header -->
     <header class="header">
       <div class="container">
@@ -51,22 +51,22 @@
     <!-- main -->
     <main class="content">
       
-        <!-- section 1 -->
+        <!-- section first-screen -->
         <section class="first-screen">
           <div class="container">
             <div class="wrapper">
               <h1 class="first-screen__title">
                 Эффективные решения для вашего бизнеса
               </h1>
-              <button type="button" class="first-screen__btn btn btn-active">
+              <button data-modal-open type="button" class="first-screen__btn btn btn-active">
                 Заказать услугу
               </button>
             </div>
           </div>
         </section>
-        <!-- /section 1 -->
+        <!-- /section first-screen -->
 
-        <!-- section 2 -->
+        <!-- section advantages -->
         <section class="advantages">
           <div class="container">
             <h2 class="advantages__title">Приемущества</h2>
@@ -122,46 +122,56 @@
             </ul>
           </div>
         </section>
-        <!-- /section 2 -->
+        <!-- /section advantages -->
 
-        <!-- section 3 -->
+        <!-- section work -->
         <section class="work">
           <div class="container">
             <h2 class="work__title title__section">Чем мы занимаемся</h2>
             <ul class="work__list list">
               <li class="work__item">
-                <img
-                  class="work__img"
-                  src="./img/desktop.jpg"
-                  alt="Рабочее место. Стол, клавиатура, монитор"
-                  width="370"
-                  height="294"
-                />
+                <div class="box">
+                  <img
+                    class="work__img"
+                    src="./img/desktop.jpg"
+                    alt="Рабочее место. Стол, клавиатура, монитор"
+                    width="370"
+                    height="294"
+                  />
+                  <p>Десктопные Приложения</p>
+                </div>
+
               </li>
               <li class="work__item">
-                <img
-                  class="work__img"
-                  src="./img/mobile.jpg"
-                  alt="Рабочее место. Компьютер с изображением мобильной разработки"
-                  width="370"
-                  height="294"
-                />
+                <div class="box">
+                  <img
+                    class="work__img"
+                    src="./img/mobile.jpg"
+                    alt="Рабочее место. Компьютер с изображением мобильной разработки"
+                    width="370"
+                    height="294"
+                  />
+                  <p>Мобильные приложения</p>
+                </div>
               </li>
               <li class="work__item">
-                <img
-                  class="work__img"
-                  src="./img/design.jpg"
-                  alt="Рабочий процесс. Работа дизайнера на планшете."
-                  width="370"
-                  height="294"
-                />
+                <div class="box">
+                  <img
+                    class="work__img"
+                    src="./img/design.jpg"
+                    alt="Рабочий процесс. Работа дизайнера на планшете."
+                    width="370"
+                    height="294"
+                  />
+                  <p>Дизайнерские решения</p>
+                </div>
               </li>
             </ul>
           </div>
         </section>
-        <!-- /section 3 -->
+        <!-- /section work -->
 
-        <!-- sectiom 4 -->
+        <!-- sectiom team -->
         <section class="team">
           <div class="container">
             <h2 class="team__title title__section">Наша команда</h2>
@@ -341,9 +351,9 @@
             </ul>
           </div>
         </section>
-        <!-- /section 4 -->
+        <!-- /section team -->
 
-        <!-- section 5 -->
+        <!-- section clients -->
         <section class="clients">
           <div class="container">
             <h2 class="clients__title title__section">Постоянные клиенты</h2>
@@ -393,7 +403,7 @@
             </ul>
           </div>
         </section>
-        <!-- /section 5 -->
+        <!-- /section clients -->
     </main>
     <!-- /main -->
 
@@ -450,6 +460,13 @@
       </div>
     </footer>
     <!-- /footer -->
-  <script href="./js/modal.js"></script>
+
+    <div data-modal class="bakdrop is-hidden">
+      <div class="modal">
+        <button data-modal-close type="button" class="close"></button>
+      </div>
+    </div>
+
+  <script src="./js/modal.js"></script>
   </body>
 </html>
