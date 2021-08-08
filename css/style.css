@@ -62,6 +62,14 @@ img {
   color: var(--colorText);
   background-color: var(--activeColor);
 }
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .title__section {
   font-size: 36px;
   font-weight: 700;
@@ -134,7 +142,6 @@ img {
 .contacts .contacts__item:focus,
 .address__location:focus {
   color: var(--activeColor);
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Контакты */
@@ -163,7 +170,8 @@ img {
   transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Студия --- */
+     /* --- Студия --- */
+
 
 /* --- first-screen */
 
@@ -208,9 +216,8 @@ img {
 .first-screen__btn:hover {
   color: var(--activeColor);
   background-color: var(--btnBg);
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 /* --- advantages */
 
@@ -251,6 +258,7 @@ img {
   color: var(--secondaryColor);
   line-height: 1.7;
 }
+
 
 /* --- work */
 
@@ -312,7 +320,7 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team__item .wrapper {
+.team__item .box {
   padding: 30px 32px;
   background-color: var(--colorText);
 }
@@ -346,7 +354,6 @@ img {
 .footer .social-list__item a:hover,
 .footer .social-list__item a:focus {
   background-color: var(--activeColor);
-  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list__item svg {
   fill: #afb1b8;
@@ -385,8 +392,7 @@ img {
 .clients-list__link:focus {
   outline: var(--activeColor);
   border: 1px solid var(--activeColor);
-  transition: outline 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    border 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: outline 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list__item svg {
   fill: #afb1b8;
@@ -400,7 +406,8 @@ img {
   margin-right: 30px;
 }
 
-/* --- Портфолио --- */
+
+    /* --- Portfollio --- */
 
 .section-portfolio {
   border-top: 1px solid #ececec;
@@ -435,9 +442,6 @@ img {
   color: var(--colorText);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-list__btn.btn-active {
   color: var(--colorText);
@@ -450,16 +454,19 @@ img {
 .item {
   margin: 15px;
 }
-.item:hover {
-  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+.item:hover,
+.item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .item:hover .wrapper::before,
-.item:hover .wrapper > p {
+.item__link:focus .wrapper::before,
+.item:hover .wrapper > p,
+.item__link:focus .wrapper > p {
   opacity: 1;
   transform: translateY(0%);
   transition: transform 0.25s linear, opacity 0.025s linear;
+  overflow: auto;
 }
 .item__link {
   display: inline-block;
@@ -492,7 +499,7 @@ img {
 
   width: 100%;
   height: 100%;
-  padding: 63px 24px;
+  padding: 60px 24px;
 
   font-size: 18px;
   line-height: 1.6;
@@ -502,7 +509,6 @@ img {
 }
 
 .item .item__link:focus {
-  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -525,7 +531,9 @@ img {
   line-height: 1.86;
 }
 
-/* Подвал */
+
+/* --- Footer */
+
 .footer {
   background-color: var(--sectionBg);
   padding: 60px 0px;
@@ -583,17 +591,19 @@ img {
   margin-right: 10px;
 }
 
+
 /* --- modal window */
 
 .bakdrop {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
 
   background: rgba(0, 0, 0, 0.2);
-  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   position: absolute;
@@ -608,7 +618,8 @@ img {
   border-radius: 4px;
 
   transform: translate(-50%, -50%);
-  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+  visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
   opacity: 0;
